@@ -22,6 +22,7 @@ class ResizeImageRequest extends FormRequest
      */
     public function rules(): array
     {
+
         $rules = [
             'image' => ['required'],
             'w' => ['required', 'regex:/^\d+(\.\d+)?%?$/'], //50 , 50% , 50.123 , 50.123%
@@ -36,7 +37,6 @@ class ResizeImageRequest extends FormRequest
         }else{
             $rules['image'][] = 'url';
         }
-
         return $rules;
     }
 }
